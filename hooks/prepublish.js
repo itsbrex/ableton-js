@@ -1,9 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import packageJson from "../package.json" with { type: "json" };
+import packageJson from "./package.json" with { type: "json" };
 
-const internalPath = path.join(import.meta.dirname, "..", "midi-script", "version.py");
+const internalPath = path.join(__dirname, "..", "midi-script", "version.py");
 const file = fs.readFileSync(internalPath);
 
 const replaced = file
